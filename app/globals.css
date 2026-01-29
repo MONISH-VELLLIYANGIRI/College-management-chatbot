@@ -143,3 +143,23 @@
 .dark body {
   background: linear-gradient(135deg, oklch(0.12 0.007 265.5) 0%, oklch(0.16 0.01 275) 100%);
 }
+/* Text overflow fixes */
+p, span, div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Chat message overflow handling */
+.whitespace-pre-wrap {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Input field text handling */
+input[type="text"],
+textarea {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

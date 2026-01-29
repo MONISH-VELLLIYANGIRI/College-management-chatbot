@@ -8,7 +8,6 @@ import { ChatHeader } from "@/components/chat-header"
 import { ChatMessage } from "@/components/chat-message"
 import { ChatInput } from "@/components/chat-input"
 import { StudentSelector } from "@/components/student-selector"
-import { RAGExplanation } from "@/components/rag-explanation"
 
 export default function HomePage() {
   const [isDark, setIsDark] = useState(false)
@@ -67,13 +66,17 @@ export default function HomePage() {
                 </p>
               </div>
 
+              {/* Search tip */}
+              <div className="rounded-lg border border-blue-200 dark:border-blue-800 bg-blue-50 dark:bg-blue-950 p-3 sm:p-4">
+                <p className="text-xs sm:text-sm text-blue-900 dark:text-blue-100">
+                  <span className="font-semibold">💡 Tip:</span> Use the search box below to find and select your profile by name, ID, or department
+                </p>
+              </div>
+
               {/* Student selector */}
               <div className="rounded-lg border border-border bg-card p-4 sm:p-6">
                 <StudentSelector onSelect={selectStudent} currentStudent={currentStudent} />
               </div>
-
-              {/* RAG explanation */}
-              <RAGExplanation />
             </div>
           ) : (
             // Messages container
